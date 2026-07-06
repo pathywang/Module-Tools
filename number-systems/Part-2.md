@@ -13,14 +13,14 @@ Answer: A binary number is a power of two if it has exactly one 1 bit and all ot
 Q17: If reading the byte 0x21 as an ASCII character, what character would it mean?
 Answer:0x21 convert to binary number: 0b0010001 which represents ! character in ASCII program
 
-Q18: If reading the byte 0x21 as a greyscale colour, as described in "Approaches for Representing Colors and Images", what colour would it mean?
+Q18: If reading the byte 0x21 as a greyscale color, as described in "Approaches for Representing Colors and Images", what color would it mean?
 Answer: due to that 0x00=black 0xFF=white, ox21 should be low value(33 out of 255 in decimal value) so it should be dark grey(almost dark)
 
 Q19: If reading the bytes 0xAA00FF as a sequence of three one-byte decimal numbers, what decimal numbers would they be?
 Answer: AA=160(16*10+10=170),00=00, FF=255(16*15+15=255) and also two hexadecimal number is one-byte binary number, so 0xAA00FF as a sequence of three one-byte
         decimal numbers are 170,0,255
 
-Q20: If reading the bytes 0xAA00FF as an RGB colour, as described in "Approaches for Representing Colors and Images", what colour would it mean?
+Q20: If reading the bytes 0xAA00FF as an RGB color, as described in "Approaches for Representing Colors and Images", what color would it mean?
 Answer: As red = 0xAA = 170,Green = 0x00 = 0,Blue = 0xFF = 255 so RGB(170, 0, 255) so it shows strong red component,no green and strong blue component.
-        The colour should be a bright purple / magenta colour.
+        The color should be a bright purple / magenta color.
 
