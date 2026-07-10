@@ -6,4 +6,4 @@ set -euo pipefail
 # TODO: Write a command to output scores-table.txt, with lines sorted by the person's first score, descending.
 # The first line of your output should be "Basia London 22 9 6" (with no quotes).
 
-sort -k3,3nr scores-table.txt
+cat scores-table.txt | sort -k3,3nr -k1,1r
