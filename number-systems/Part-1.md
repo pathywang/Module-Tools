@@ -19,7 +19,7 @@ Q4: Which is larger: 00100 or 01011?
 Answer:01011
 
 Q5: What is 10101 + 01010?
-Answer: 100000
+Answer: 11111
 
 Q6: What is 10001 + 10001?
 Answer: 100010
