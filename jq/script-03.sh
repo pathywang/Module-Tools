@@ -6,4 +6,5 @@ set -euo pipefail
 # TODO: Write a command to output the name of the person, then a comma, then their profession.
 # Your output should be exactly the string "Selma, Software Engineer", but should not contain any quote characters.
 
-jq -r '"\(.name), \(.profession)"' person.json
+jq -r '"\(.name), \(.profession)"' person.json      
+
