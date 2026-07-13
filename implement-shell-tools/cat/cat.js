@@ -4,16 +4,21 @@ const args = process.argv.slice(2);
 
 const numberLines = args[0] === "-n";
 
-const filename = numberLines ? args[1] : args[0];
+const files = numberLines ? args.slice(1) : args;
 
-const content = fs.readFileSync(filename, "utf8");
+let lineNumber = 1;
 
-const lines = content.split("\n");
+for (const file of files) {
+  const content = fs.readFileSync(file, "utf8");
 
-if (numberLines) {
-  lines.forEach((line, index) => {
-    console.log(`${String(index + 1).padStart(6)}\t${line}`);
-  });
-} else {
-  process.stdout.write(content);
+  const lines = content.split("\n");
+
+  for (const line of lines) {
+    if (numberLines) {
+      console.log(`${String(lineNumber).padStart(6)}\t${line}`);
+      lineNumber++;
+    } else {
+      console.log(line);
+    }
+  }
 }
