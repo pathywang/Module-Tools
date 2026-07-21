@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument(
     "--animal",
-    choices= cowsay.char_names,      
+    choices=cowsay.char_names,      
     default="cow",
     help="The animal to be saying things."
 )
@@ -20,6 +20,5 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-print(args.message)
 cowsay.char_funcs[args.animal](" ".join(args.message))
 
