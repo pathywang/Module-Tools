@@ -27,31 +27,72 @@ if (!countLines && !countWords && !countBytes) {
 }
 
 function countFile(filename) {
-    const content = fs.readFileSync(filename, "utf8");
+     try {
+        const content = fs.readFileSync(filename, "utf8");
 
-    const lines = content.split("\n").length - 1;
-    const words = content.trim() === "" ? 0 : content.trim().split(/\s+/).length;
-    const bytes = Buffer.byteLength(content);
+        const lines = content.split("\n").length - 1;
+        const words = content.trim() === "" ? 0 : content.trim().split(/\s+/).length;
+        const bytes = Buffer.byteLength(content);
 
+        let output = [];
+
+        if (countLines) {
+            output.push(lines);
+        }
+
+        if (countWords) {
+            output.push(words);
+        }
+
+        if (countBytes) {
+            output.push(bytes);
+        }
+
+        output.push(filename);
+
+        console.log(output.join(" "));
+
+        return {
+            lines,
+            words,
+            bytes
+        };
+    } catch (err) {
+        console.error(`wc: ${filename}: ${err.message}`);
+        return null;
+    }
+}
+
+let totalLines = 0;
+let totalWords = 0;
+let totalBytes = 0;
+
+for (const file of files) {
+    const counts = countFile(file);
+
+    if (counts) {
+        totalLines += counts.lines;
+        totalWords += counts.words;
+        totalBytes += counts.bytes;
+    }
+}
+
+if (files.length > 1) {
     let output = [];
 
     if (countLines) {
-        output.push(lines);
+        output.push(totalLines);
     }
 
     if (countWords) {
-        output.push(words);
+        output.push(totalWords);
     }
 
     if (countBytes) {
-        output.push(bytes);
+        output.push(totalBytes);
     }
 
-    output.push(filename);
+    output.push("total");
 
     console.log(output.join(" "));
-}
-
-for (const file of files) {
-    countFile(file);
 }
