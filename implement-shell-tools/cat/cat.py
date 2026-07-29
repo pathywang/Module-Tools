@@ -30,3 +30,4 @@ for filename in files:
 
     except Exception as err:
         print(f"cat: {filename}: {err}")
+        
