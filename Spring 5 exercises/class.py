@@ -1,13 +1,14 @@
 class Person:
-    def __init__(self, name: str, age: int, preferred_operating_system: str):
+    def __init__(self, name: str, age: int, preferred_operating_system: str,address:str):
         self.name = name
         self.age = age
         self.preferred_operating_system = preferred_operating_system
+        self.address=address
 
-imran = Person("Imran", 22, "Ubuntu")
+imran = Person("Imran", 22, "Ubuntu", "23 main raod")
 print(imran.name)
 
-eliza = Person("Eliza", 34, "Arch Linux")
+eliza = Person("Eliza", 34, "Arch Linux","32 divert way")
 print(eliza.name)
 
 def is_adult(person: Person) -> bool:
@@ -15,7 +16,7 @@ def is_adult(person: Person) -> bool:
 
 print(is_adult(imran))
 
-def homeadress(person :Person):
+def home_address(person :Person):
     return person.address 
 
-print(homeadress(eliza))
+print(home_address(eliza))
