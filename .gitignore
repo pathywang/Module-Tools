@@ -1,7 +1,0 @@
-
-node_modules
-testoutput.txt
-
-.venv/
-__pycache__/
-*.pyc
