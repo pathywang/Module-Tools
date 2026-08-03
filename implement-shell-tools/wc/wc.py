@@ -23,6 +23,22 @@ if not count_lines and not count_words and not count_bytes:
     count_words = True
     count_bytes = True
 
+def print_output(lines, words, bytes_count, label):
+    output = []
+
+    if count_lines:
+        output.append(f"{lines:8}")
+
+    if count_words:
+        output.append(f"{words:8}")
+
+    if count_bytes:
+        output.append(f"{bytes_count:8}")
+
+    output.append(f" {label}")
+
+    print("".join(output))
+
 
 def count_file(filename):
     try:
@@ -36,20 +52,7 @@ def count_file(filename):
         # UTF-8 bytes, same idea as Buffer.byteLength()
         bytes_count = len(content.encode("utf-8"))
 
-        output = []
-
-        if count_lines:
-            output.append(str(lines))
-
-        if count_words:
-            output.append(str(words))
-
-        if count_bytes:
-            output.append(str(bytes_count))
-
-        output.append(filename)
-
-        print(" ".join(output))
+        print_output(lines, words, bytes_count, filename)
 
         return {
             "lines": lines,
@@ -66,6 +69,8 @@ total_lines = 0
 total_words = 0
 total_bytes = 0
 
+
+
 for file in files:
     counts = count_file(file)
 
@@ -76,17 +81,4 @@ for file in files:
 
 
 if len(files) > 1:
-    output = []
-
-    if count_lines:
-        output.append(str(total_lines))
-
-    if count_words:
-        output.append(str(total_words))
-
-    if count_bytes:
-        output.append(str(total_bytes))
-
-    output.append("total")
-
-    print(" ".join(output))
+    print_output(total_lines, total_words, total_bytes, "total")
