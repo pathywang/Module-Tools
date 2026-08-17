@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import List
 import sys
 
 
@@ -50,13 +49,14 @@ print("- Ubuntu")
 print("- Arch Linux")
 print("- macOS")
 
-os_input = input("Preferred operating system: ")
+while True:
+    os_input = input("Preferred operating system: ")
 
-try:
-    preferred_os = OperatingSystem(os_input)
-except ValueError:
-    print("Error: invalid operating system.", file=sys.stderr)
-    sys.exit(1)
+    try:
+        preferred_os = OperatingSystem(os_input)
+        break
+    except ValueError:
+        print("Please choose Ubuntu, Arch Linux, or macOS.")
 
 # Create the person
 person = Person(name, age, preferred_os)
