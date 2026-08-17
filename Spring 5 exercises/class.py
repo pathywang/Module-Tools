@@ -5,8 +5,8 @@ class Person:
         self.preferred_operating_system = preferred_operating_system
         self.address=address
 
-imran = Person("Imran", 22, "Ubuntu", "23 main raod")
-print(imran.name)
+amy = Person("Amy", 22, "Ubuntu", "23 main road")
+print(amy.name)
 
 eliza = Person("Eliza", 34, "Arch Linux","32 divert way")
 print(eliza.name)
@@ -14,7 +14,7 @@ print(eliza.name)
 def is_adult(person: Person) -> bool:
     return person.age >= 18
 
-print(is_adult(imran))
+print(is_adult(amy))
 
 def home_address(person :Person):
     return person.address 

@@ -16,13 +16,13 @@ class Person:
 
         return age>=18   
 
-imaran= Person("Imaran", date(2011,11,23), "Ubuntun")  
-imara2= Person("Imaran", date(2011,11,23), "Ubuntun") 
+amy= Person("Amy", date(2011,11,23), "Ubuntu")  
+amy2= Person("Amy", date(2011,11,23), "Ubuntu") 
 
-print(imaran)
-print(imara2)
-print(imaran==imara2)
-print(imaran.is_adult())
+print(amy)
+print(amy2)
+print(amy==amy2)
+print(amy.is_adult())
 
 
            

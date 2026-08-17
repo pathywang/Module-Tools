@@ -3,7 +3,7 @@ def double(number):
 
 print(double(10))
 
-# Because double conflicts with multipying 3 so we can change function name to 'triple' or '*2'
+# Because double conflicts with multiplying 3 so we can change function name to 'triple' or '*2'
 
 def triple(number):
     return number * 3

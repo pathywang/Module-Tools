@@ -18,11 +18,11 @@ def format_pence_as_string(total_pence):
 balances = {
     "Sima": 700,
     "Linn": 545,
-    "Georg": 831,
+    "George": 831,
 }
 
-open_account(balances,"Tobi", 913)
-open_account(balances,"Olya", 713)
+open_account(balances,"Toby", 913)
+open_account(balances,"Olive", 713)
 
 total_pence = sum_balances(balances)
 total_string = format_pence_as_string(total_pence)

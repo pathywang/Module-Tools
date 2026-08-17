@@ -26,7 +26,7 @@ def find_possible_laptops(laptops: List[Laptop], person: Person) -> List[Laptop]
 
 
 people = [
-    Person(name="Imran", age=22, preferred_operating_system="Ubuntu"),
+    Person(name="Amy", age=22, preferred_operating_system="Ubuntu"),
     Person(name="Eliza", age=34, preferred_operating_system="Arch Linux"),
 ]
 

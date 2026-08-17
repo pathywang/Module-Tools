@@ -7,14 +7,14 @@ class Person:
     age : int
     children: List["Person"]
 
-fatma = Person(name="Fatma", age=5, children=[])
+france = Person(name="France", age=5, children=[])
 aisha = Person(name="Aisha", age= 1, children=[])
 
-imran = Person(name="Imran",age = 32, children=[fatma, aisha])
+amy = Person(name="Amy",age = 32, children=[france, aisha])
 
 def print_family_tree(person: Person) -> None:
     print(person.name)
     for child in person.children:
         print(f"- {child.name} ({child.age})")
 
-print_family_tree(imran)
+print_family_tree(amy)
